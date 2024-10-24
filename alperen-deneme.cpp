@@ -107,8 +107,7 @@ public:
     bool toFile = !fileName.empty();
     if (toFile)
     {
-        // Dosyayı açarken std::ios::trunc kullanarak mevcut dosyayı sileriz.
-        outFile.open(fileName, ios::trunc); 
+        outFile.open(fileName);
         if (!outFile.is_open())
         {
             cerr << "Dosya açılamadı: " << fileName << endl;
@@ -178,7 +177,6 @@ public:
 
 
 
-
 };
 
 // Öğrenci sayısını dosyadan bulmak için fonksiyon
@@ -215,7 +213,7 @@ int main()
     // Ortalamaları hesapla
     students.calculateAverage();
 
-    students.print(1,"gecenler.txt");
+    students.print(0);
    
 
     return 0;
