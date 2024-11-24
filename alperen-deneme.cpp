@@ -20,8 +20,9 @@ private:
 
 public:
     // Constructor - Öğrenci sayısını dışarıdan alıp dinamik diziler oluşturuyor
-    Student(int size) : size(size)
-    {
+    Student(int size)
+    {   
+        this->size = size;
         ad = new string[size];
         ogrNo = new string[size];
         araSinav = new float[size];
@@ -200,6 +201,8 @@ int countLinesInFile(const string& fileName)
 int main()
 {
     string fileName = "ogrenci.csv";
+
+    
 
     // Öğrenci sayısını dosyadan okuyarak belirleyin
     int studentCount = countLinesInFile(fileName);

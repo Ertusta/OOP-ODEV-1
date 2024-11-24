@@ -20,8 +20,9 @@ private:
 
 public:
     // Constructor - Öğrenci sayısını dışarıdan alıp dinamik diziler oluşturuyor
-    Student(int size) : size(size)
-    {
+    Student(int size)
+    {   
+        this->size = size;
         ad = new string[size];
         ogrNo = new string[size];
         araSinav = new float[size];
@@ -107,8 +108,7 @@ public:
     bool toFile = !fileName.empty();
     if (toFile)
     {
-        // Dosyayı açarken std::ios::trunc kullanarak mevcut dosyayı sileriz.
-        outFile.open(fileName, ios::trunc); 
+        outFile.open(fileName);
         if (!outFile.is_open())
         {
             cerr << "Dosya açılamadı: " << fileName << endl;
@@ -178,7 +178,6 @@ public:
 
 
 
-
 };
 
 // Öğrenci sayısını dosyadan bulmak için fonksiyon
@@ -203,6 +202,8 @@ int main()
 {
     string fileName = "ogrenci.csv";
 
+    
+
     // Öğrenci sayısını dosyadan okuyarak belirleyin
     int studentCount = countLinesInFile(fileName);
     cout << "Toplam öğrenci sayısı: " << studentCount << endl;
@@ -215,7 +216,7 @@ int main()
     // Ortalamaları hesapla
     students.calculateAverage();
 
-    students.print(1,"gecenler.txt");
+    students.print(0);
    
 
     return 0;
