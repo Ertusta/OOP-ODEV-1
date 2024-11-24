@@ -94,7 +94,7 @@ void Student::average()
 {
     for (int i = 0; i < size; i++)
     {
-        // Ortalama :    %20 Ara Sınav,             %20 2. Sınav,           %20 Ödev,         %40 Final
+        // Ortalama :%20 Ara Sınav,             %20 2. Sınav,           %20 Ödev,         %40 Final
         ort[i] = (araSinav[i] * 0.20) + (ikinciSinav[i] * 0.20) + (odev[i] * 0.20) + (final[i] * 0.40);
     }
 }
